@@ -67,7 +67,7 @@ export function Footer() {
             </p>
             <p className="mt-4 flex items-start gap-2 text-sm leading-relaxed text-white/60">
               <MapPin className="mt-0.5 h-4 w-4 shrink-0" />
-              R. Padre Paulino, 500
+              Av. Padre Paulino, 490 — Cajazeiras
               <br />
               Fortaleza/CE · Seg–Sáb, 8h–17h
             </p>

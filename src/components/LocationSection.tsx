@@ -12,7 +12,7 @@ import { whatsappLink } from "@/lib/utils";
 import { inViewOptions } from "@/lib/motion";
 
 const MAPS_DIR =
-  "https://www.google.com/maps/dir/?api=1&destination=R.+Padre+Paulino,+500,+Cajazeiras,+Fortaleza+-+CE,+60864-240";
+  "https://www.google.com/maps/dir/?api=1&destination=-3.8043648,-38.4925696";
 
 const LOC_WA = whatsappLink(
   "Olá DX Stetic! Quero agendar um horário. Como faço pra chegar até vocês?"
@@ -71,7 +71,7 @@ export function LocationSection() {
                   Endereço
                 </p>
                 <p className="mt-1 text-sm leading-relaxed text-white/65">
-                  R. Padre Paulino, 500 — Cajazeiras
+                  Av. Padre Paulino, 490 — Cajazeiras
                   <br />
                   CEP 60864-240 — Fortaleza/CE
                 </p>
@@ -131,7 +131,7 @@ export function LocationSection() {
           <div className="relative min-h-[360px] lg:min-h-full">
             <iframe
               title="Localização da DX Stetic no Google Maps"
-              src="https://www.google.com/maps?q=R.+Padre+Paulino,+500,+Cajazeiras,+Fortaleza+-+CE,+60864-240&output=embed"
+              src="https://www.google.com/maps?q=-3.8043648,-38.4925696&z=16&hl=pt-BR&output=embed"
               className="absolute inset-0 h-full w-full"
               style={{ border: "none" }}
               allowFullScreen

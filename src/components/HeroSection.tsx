@@ -44,7 +44,7 @@ interface Stat {
 const STATS: Stat[] = [
   { value: 6000, prefix: "+", label: "clientes atendidos" },
   { value: 9, suffix: " anos", label: "de experiência" },
-  { value: null, text: "Tempo Real", label: "acompanhamento" },
+  { value: null, text: "Nº 1", label: "mais bem avaliado em Fortaleza" },
 ];
 
 function StatItem({ stat, delay }: { stat: Stat; delay: number }) {

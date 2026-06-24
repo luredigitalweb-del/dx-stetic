@@ -40,7 +40,7 @@ const DIFFERENTIALS: Differential[] = [
   {
     icon: MapPin,
     title: "Fácil de Encontrar",
-    description: "R. Padre Paulino, 500 · Fortaleza/CE · Seg–Sáb, 8h às 17h.",
+    description: "Av. Padre Paulino, 490 · Cajazeiras, Fortaleza/CE · Seg–Sáb, 8h às 17h.",
   },
 ];
 

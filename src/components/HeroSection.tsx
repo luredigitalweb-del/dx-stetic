@@ -12,6 +12,7 @@ import { MessageCircle, ArrowRight, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { whatsappLink } from "@/lib/utils";
+import { useIsMobile } from "@/lib/useIsMobile";
 
 const HERO_WA = whatsappLink(
   "Olá! Vi o site e quero falar com um especialista da DX Stetic."
@@ -99,6 +100,9 @@ function StatItem({ stat, delay }: { stat: Stat; delay: number }) {
 
 export function HeroSection() {
   const reduce = useReducedMotion();
+  const isMobile = useIsMobile();
+  // "lite" = sem efeitos contínuos pesados (mobile ou usuário pediu menos animação)
+  const lite = reduce || isMobile;
 
   // Parallax com o mouse (springs = movimento fluido)
   const mx = useMotionValue(0);
@@ -148,7 +152,7 @@ export function HeroSection() {
         loading="eager"
         fetchPriority="high"
         className={`absolute inset-0 -z-30 h-full w-full object-cover object-center ${
-          reduce ? "" : "animate-kenburns"
+          lite ? "" : "animate-kenburns"
         }`}
       />
       {/* Blend horizontal: preto à esquerda → foto à direita */}
@@ -167,31 +171,34 @@ export function HeroSection() {
         aria-hidden="true"
       />
 
-      {/* Glows vermelhos animados (opacity = GPU) + parallax do mouse */}
-      <motion.div
-        className="pointer-events-none absolute -left-24 top-1/4 -z-10 h-[28rem] w-[28rem] transform-gpu rounded-full bg-brand-red/25 blur-[130px]"
-        aria-hidden="true"
-        style={{ x: glow1X, y: glow1Y }}
-        animate={reduce ? undefined : { opacity: [0.35, 0.7, 0.35] }}
-        transition={reduce ? undefined : { duration: 7, repeat: Infinity, ease: "easeInOut" }}
-      />
-      <motion.div
-        className="pointer-events-none absolute bottom-0 left-1/3 -z-10 h-80 w-80 transform-gpu rounded-full bg-brand-red/20 blur-[120px]"
-        aria-hidden="true"
-        style={{ x: glow2X, y: glow2Y }}
-        animate={reduce ? undefined : { opacity: [0.25, 0.55, 0.25] }}
-        transition={reduce ? undefined : { duration: 9, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-      />
-
-      {/* Grão */}
-      <div
-        className="pointer-events-none absolute inset-0 -z-10 opacity-[0.06] mix-blend-overlay"
-        style={{ backgroundImage: `url("${NOISE}")` }}
-        aria-hidden="true"
-      />
+      {/* Glows + grão — só no desktop (blurs grandes derrubam o FPS no mobile) */}
+      {!lite && (
+        <>
+          <motion.div
+            className="pointer-events-none absolute -left-24 top-1/4 -z-10 h-[28rem] w-[28rem] transform-gpu rounded-full bg-brand-red/25 blur-[130px]"
+            aria-hidden="true"
+            style={{ x: glow1X, y: glow1Y }}
+            animate={{ opacity: [0.35, 0.7, 0.35] }}
+            transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
+          />
+          <motion.div
+            className="pointer-events-none absolute bottom-0 left-1/3 -z-10 h-80 w-80 transform-gpu rounded-full bg-brand-red/20 blur-[120px]"
+            aria-hidden="true"
+            style={{ x: glow2X, y: glow2Y }}
+            animate={{ opacity: [0.25, 0.55, 0.25] }}
+            transition={{ duration: 9, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+          />
+          {/* Grão */}
+          <div
+            className="pointer-events-none absolute inset-0 -z-10 opacity-[0.06] mix-blend-overlay"
+            style={{ backgroundImage: `url("${NOISE}")` }}
+            aria-hidden="true"
+          />
+        </>
+      )}
 
       {/* Varredura de luz diagonal (shine) */}
-      {!reduce && (
+      {!lite && (
         <motion.div
           className="pointer-events-none absolute inset-y-0 -z-10 w-1/3 -skew-x-12 bg-gradient-to-r from-transparent via-white/10 to-transparent"
           aria-hidden="true"
@@ -207,7 +214,7 @@ export function HeroSection() {
       )}
 
       {/* Partículas subindo */}
-      {!reduce && (
+      {!lite && (
         <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden" aria-hidden="true">
           {PARTICLES.map((p, i) => (
             <motion.span

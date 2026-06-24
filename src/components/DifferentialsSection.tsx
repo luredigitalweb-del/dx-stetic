@@ -10,6 +10,7 @@ import {
 import type { LucideIcon } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { inViewOptions } from "@/lib/motion";
+import { useIsMobile } from "@/lib/useIsMobile";
 
 interface Differential {
   icon: LucideIcon;
@@ -48,6 +49,9 @@ const DRIVE = 2.8;
 
 export function DifferentialsSection() {
   const reduce = useReducedMotion();
+  const isMobile = useIsMobile();
+  // efeitos contínuos (halo, radar, flutuação) só no desktop — mobile mantém só o carro + reveals
+  const lite = reduce || isMobile;
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, amount: 0.3 });
 
@@ -176,7 +180,7 @@ export function DifferentialsSection() {
                 {/* círculo do ícone */}
                 <div className="relative shrink-0">
                   {/* halo pulsante */}
-                  {!reduce && (
+                  {!lite && (
                     <motion.span
                       aria-hidden="true"
                       className="absolute inset-0 -z-10 rounded-full bg-brand-red/30 blur-md"
@@ -190,7 +194,7 @@ export function DifferentialsSection() {
                     />
                   )}
                   {/* anel de pulso (radar) */}
-                  {!reduce && (
+                  {!lite && (
                     <motion.span
                       aria-hidden="true"
                       className="absolute inset-0 rounded-full border-2 border-brand-red"
@@ -205,9 +209,9 @@ export function DifferentialsSection() {
                   )}
                   <motion.div
                     className="relative z-10 flex h-20 w-20 transform-gpu items-center justify-center rounded-full bg-brand-dark ring-2 ring-brand-red/60 transition-all duration-300 group-hover:ring-4 group-hover:ring-brand-red"
-                    animate={reduce ? undefined : { y: [0, -5, 0] }}
+                    animate={lite ? undefined : { y: [0, -5, 0] }}
                     transition={
-                      reduce
+                      lite
                         ? undefined
                         : {
                             duration: 3,

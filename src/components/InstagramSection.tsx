@@ -114,9 +114,9 @@ export function InstagramSection() {
               rel="noopener noreferrer"
               aria-label="Abrir Instagram da DX Stetic"
               className="block"
-              animate={reduce ? undefined : { y: [0, -12, 0] }}
+              animate={reduce || !isDesktop ? undefined : { y: [0, -12, 0] }}
               transition={
-                reduce
+                reduce || !isDesktop
                   ? undefined
                   : { duration: 5, repeat: Infinity, ease: "easeInOut" }
               }

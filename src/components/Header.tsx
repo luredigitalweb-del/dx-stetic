@@ -51,7 +51,7 @@ export function Header() {
       <div className="container-page pt-4 sm:pt-5">
         {/* Pílula branca flutuante */}
         <div
-          className={`flex h-16 items-center justify-between rounded-full border border-brand-line bg-white/95 px-3 pl-5 backdrop-blur-md transition-shadow duration-300 ${
+          className={`flex h-16 items-center justify-between rounded-full border border-brand-line bg-white px-3 pl-5 transition-shadow duration-300 sm:bg-white/95 sm:backdrop-blur-md ${
             scrolled ? "shadow-soft" : "shadow-[0_8px_30px_-12px_rgba(20,20,22,0.25)]"
           }`}
         >

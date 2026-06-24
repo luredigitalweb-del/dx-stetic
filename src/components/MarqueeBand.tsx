@@ -16,8 +16,8 @@ const SERVICES = [
 const INFO = [
   "Acompanhamento em tempo real",
   "Parcelamos pra você",
-  "+100 clientes por mês",
-  "6 anos de experiência",
+  "+6000 clientes atendidos",
+  "9 anos de experiência",
   "Pós-venda garantido",
   "Fortaleza/CE",
   "Seg–Sáb · 8h às 17h",

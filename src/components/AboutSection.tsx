@@ -39,7 +39,7 @@ const FEATURES: Feature[] = [
   },
   {
     icon: Trophy,
-    title: "6 anos, +100 clientes/mês",
+    title: "9 anos, +6000 clientes atendidos",
     description:
       "Histórico consolidado e uma base de clientes que volta e indica. Qualidade que se sustenta.",
   },
@@ -63,11 +63,12 @@ export function AboutSection() {
         >
           <Badge className="mb-4">Sobre nós</Badge>
           <h2 className="text-4xl font-bold uppercase leading-[0.95] tracking-tight text-brand-ink sm:text-5xl">
-            Um <span className="text-brand-red">estúdio</span> de estética. Não
-            uma lavagem<span className="text-brand-red">.</span>
+            Mais que uma lavagem, um{" "}
+            <span className="text-brand-red">tratamento</span>
+            <span className="text-brand-red">.</span>
           </h2>
           <p className="mx-auto mt-5 max-w-xl text-base text-brand-muted">
-            Há 6 anos cuidando de veículos em Fortaleza com produtos
+            Há 9 anos cuidando de veículos em Fortaleza com produtos
             profissionais, técnica atualizada e atenção a cada detalhe.
           </p>
         </motion.div>
@@ -146,10 +147,10 @@ export function AboutSection() {
                 </span>
                 <div>
                   <p className="text-[11px] font-bold uppercase tracking-wider text-brand-red-light">
-                    Atendidos todo mês
+                    Clientes atendidos
                   </p>
                   <p className="font-display text-lg font-bold uppercase leading-tight tracking-tight text-white">
-                    Junte-se aos +100 clientes que confiam na DX Stetic
+                    Junte-se aos +6000 clientes que confiam na DX Stetic
                   </p>
                 </div>
               </div>

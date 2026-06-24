@@ -44,7 +44,7 @@ const FEATURED: Featured[] = [
     title: "Vitrificação",
     description:
       "Proteção duradoura para a pintura, com brilho intenso e repelência à água e sujeira.",
-    features: ["Dura até 12 meses", "Brilho profundo", "Realça a cor original"],
+    features: ["Dura até 3 anos", "Brilho profundo", "Realça a cor original"],
   },
   {
     icon: Shield,

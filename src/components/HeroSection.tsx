@@ -42,8 +42,8 @@ interface Stat {
 }
 
 const STATS: Stat[] = [
-  { value: 100, prefix: "+", label: "clientes / mês" },
-  { value: 6, suffix: " anos", label: "de experiência" },
+  { value: 6000, prefix: "+", label: "clientes atendidos" },
+  { value: 9, suffix: " anos", label: "de experiência" },
   { value: null, text: "Tempo Real", label: "acompanhamento" },
 ];
 

@@ -9,6 +9,9 @@ dist-ssr
 /imagem_*.png
 /706464255*.png
 /*.mp4
+*.mov
+*.MOV
+*.MP4
 _*.mjs
 
 # Editor

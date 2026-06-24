@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-brand-line;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 104px; /* compensa o header flutuante */
+  }
+
+  body {
+    @apply bg-brand-paper text-brand-ink font-body antialiased;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-display;
+  }
+}
+
+@layer utilities {
+  .container-page {
+    @apply mx-auto w-full max-w-6xl px-5 sm:px-8;
+  }
+
+  /* destaque "marcado a caneta" sob a palavra-chave do título */
+  .underline-brush {
+    background-image: linear-gradient(
+      transparent 83%,
+      rgba(225, 20, 20, 0.95) 83%,
+      rgba(225, 20, 20, 0.95) 96%,
+      transparent 96%
+    );
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    padding: 0 0.05em;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

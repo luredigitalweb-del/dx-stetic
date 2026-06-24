@@ -1,0 +1,23 @@
+node_modules
+dist
+dist-ssr
+*.local
+.vite
+
+# Uploads brutos (já copiados para /public) — fora do repo
+/image*.png
+/imagem_*.png
+/706464255*.png
+/*.mp4
+_*.mjs
+
+# Editor
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

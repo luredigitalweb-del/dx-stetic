@@ -12,7 +12,7 @@ import { whatsappLink } from "@/lib/utils";
 import { inViewOptions } from "@/lib/motion";
 
 const MAPS_DIR =
-  "https://www.google.com/maps/dir/?api=1&destination=-3.8043648,-38.4925696";
+  "https://www.google.com/maps/dir/?api=1&destination=Lava+Jato+Dx+Stetic,+Av.+Padre+Paulino,+490+-+Cajazeiras,+Fortaleza+-+CE";
 
 const LOC_WA = whatsappLink(
   "Olá DX Stetic! Quero agendar um horário. Como faço pra chegar até vocês?"
@@ -131,7 +131,7 @@ export function LocationSection() {
           <div className="relative min-h-[360px] lg:min-h-full">
             <iframe
               title="Localização da DX Stetic no Google Maps"
-              src="https://www.google.com/maps?q=-3.8043648,-38.4925696&z=16&hl=pt-BR&output=embed"
+              src="https://www.google.com/maps/embed?origin=mfe&pb=!1m3!3m2!1m1!4s9669759505934496140"
               className="absolute inset-0 h-full w-full"
               style={{ border: "none" }}
               allowFullScreen
